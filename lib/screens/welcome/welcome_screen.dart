@@ -5,22 +5,11 @@ import '../../constants.dart';
 class Welcome extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
-    double width = MediaQuery.of(context).size.width;
+    //double width = MediaQuery.of(context).size.width;
     double height = MediaQuery.of(context).size.height;
     return Scaffold(
       body: ListView(
-            //mainAxisAlignment: MainAxisAlignment.center,
-            //mainAxisSize: MainAxisSize.max,
             children: [
-              // Container(
-              //     width: width / 2,
-              //     height: width / 2,
-              //     child: null,
-              //     decoration: BoxDecoration(
-              //         shape: BoxShape.circle,
-              //         color: kPrimaryColor
-              //         ),
-              //   ),
               SizedBox(
                 height: height * 0.05,
               ),
@@ -55,6 +44,15 @@ class Welcome extends StatelessWidget{
                 height: height * 0.05,
               ),
               Container(
+                decoration: BoxDecoration(boxShadow: [
+                              BoxShadow(
+                                color: Colors.green.withOpacity(0.5),
+                                //spreadRadius: 1,
+                                blurRadius: 25,
+                                offset: Offset(0, 10), // changes position of shadow
+                              ),
+                            ],
+                          ),
                 padding: const EdgeInsets.only(left: 15, right: 15),
                 height:  height * 0.07,
                 child: ClipRRect(
@@ -63,7 +61,11 @@ class Welcome extends StatelessWidget{
                           child: Text('C’est parti',
                                   style: GoogleFonts.ruda(textStyle: TextStyle(fontWeight: FontWeight.normal, color: kTextColorB, fontSize: kTextSize)),
                                 ),
-                          onPressed: () {},
+                          onPressed: () {
+                            //Navigator.pushNamed(context, '/home');
+                            Navigator.popAndPushNamed(context, '/home');
+                            
+                          },
                           style: TextButton.styleFrom(backgroundColor: kPrimaryColor, enableFeedback: false,),
                         ),    
                 ),
@@ -72,5 +74,4 @@ class Welcome extends StatelessWidget{
         ),
     );
   }
-
 }

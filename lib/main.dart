@@ -1,6 +1,6 @@
+import 'package:ArijePhyto/screens/home/homeScreen.dart';
+import 'package:ArijePhyto/screens/welcome/welcome_screen.dart';
 import 'package:flutter/material.dart';
-
-import 'screens/welcome/welcome_screen.dart';
 import 'theme.dart';
 
 void main() {
@@ -14,7 +14,11 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
       theme: lightThemeData(context),
-      home: Welcome(),
+      initialRoute: '/',
+      routes: {
+        '/' : (context) => Welcome(),
+        '/home' : (context) => Home(),
+      },
     );
   }
 }
