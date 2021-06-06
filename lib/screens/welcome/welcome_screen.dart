@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../../constants.dart';
 
+
 class Welcome extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
@@ -11,10 +12,10 @@ class Welcome extends StatelessWidget{
       body: ListView(
             children: [
               SizedBox(
-                height: height * 0.05,
+                height: height * 0.07,
               ),
               Padding(
-                padding: const EdgeInsets.all(6.0),
+                padding: const EdgeInsets.only(left: 14, right: 14),
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(kDefaultRadius),
                   child: Image.asset("assets/images/arijePhyto-c.jpg",),
@@ -64,7 +65,6 @@ class Welcome extends StatelessWidget{
                           onPressed: () {
                             //Navigator.pushNamed(context, '/home');
                             Navigator.popAndPushNamed(context, '/home');
-                            
                           },
                           style: TextButton.styleFrom(backgroundColor: kPrimaryColor, enableFeedback: false,),
                         ),    
