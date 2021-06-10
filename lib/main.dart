@@ -1,5 +1,10 @@
+import 'package:arijephyto/screens/boutique/boutique.dart';
+import 'package:arijephyto/screens/categories/categories.dart';
+import 'package:arijephyto/screens/panier/panier.dart';
+import 'package:arijephyto/screens/portfolio/portfolio.dart';
 import 'package:arijephyto/screens/welcome/welcome_screen.dart';
 import 'package:flutter/material.dart';
+import 'screens/blogs/blogs.dart';
 import 'screens/home/homeScreen.dart';
 import 'theme.dart';
 
@@ -20,6 +25,11 @@ class MyApp extends StatelessWidget {
       routes: {
         '/' : (context) =>  Welcome(),
         '/home' : (context) => Home(),
+        '/boutique' : (context) => Boutique(),
+        '/categories' : (context) => Categories(),
+        '/panier' : (context) => Panier(),
+        '/blogs' : (context) => Blogs(),
+        '/portfolio' : (context) => Portfolio(),
       },
     );
   }

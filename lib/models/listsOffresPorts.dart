@@ -1,30 +1,10 @@
+import 'package:arijephyto/components/dataLists.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import '../constants.dart';
 
-List<String> imgListOffres = [
-  "assets/images/offre1.png",
-  "assets/images/offre2.png",
-  "assets/images/offre3.png",
-  "assets/images/offre4.png",
-];
 
-List<String> imgListPort = [
-  "assets/images/port1.png",
-  "assets/images/port2.png",
-  "assets/images/port3.png",
-  "assets/images/port4.png",
-  "assets/images/port5.png",
-];
-
-List<String> listPortName = [
-  "Procédés Artisanaux",
-  "Autorisé ONSSA",
-  "100% Naturel",
-  "Esprit Coopérative",
-  "Made in Moroccog",
-];
 
 
 final List<Widget> imageSlidersOffres = imgListOffres.map((item) => Padding(
@@ -113,3 +93,58 @@ class ListPortfolios extends StatelessWidget {
     );
   }
 }
+
+class ListPortfoliosV extends StatelessWidget{
+  @override
+  Widget build(BuildContext context) {
+    double width = MediaQuery.of(context).size.width;
+    return Center(
+      child: ListView(
+        children: imgListPort.map((item) => Padding(
+          padding: const EdgeInsets.all(10.0),
+          child: ClipRRect(
+                      borderRadius: BorderRadius.circular(kDefaultRadius),
+                      child: Stack(
+                        children : [
+                          Center(child: Image.asset(item, width: width * 0.7,)),
+                          Positioned(
+                            bottom: 0.0,
+                            left: 0.0,
+                            right: 0.0,
+                            child: Container(
+                                    decoration: BoxDecoration(
+                                      gradient: LinearGradient(
+                                        colors: [
+                                          Colors.grey[300],
+                                          Colors.grey[50]
+                                        ],
+                                        begin: Alignment.bottomCenter,
+                                        end: Alignment.topCenter,
+                                      ),
+                                    ),
+                                    padding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
+                                    child: Text(
+                                      listPortName[imgListPort.indexOf(item)],
+                                      style: TextStyle(
+                                        color: kTextColor,
+                                        fontSize: 16,
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                    ),
+                                  ),
+                          ),
+                          ]),
+                    ),
+        )).toList(),
+        ),
+    );
+  }
+}
+
+// new ListView.builder
+//   (
+//     itemCount: litems.length,
+//     itemBuilder: (BuildContext ctxt, int index) {
+//      return new Text(litems[index]);
+//     }
+//   )

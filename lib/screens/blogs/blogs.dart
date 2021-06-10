@@ -1,55 +1,29 @@
 import 'package:arijephyto/models/appBar.dart';
-import 'package:arijephyto/models/bottomNavBar.dart';
-import 'package:arijephyto/models/listsOffresPorts.dart';
 import 'package:arijephyto/models/blogCard.dart';
+import 'package:arijephyto/models/bottomNavBar.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import '../../constants.dart';
 import '../nav-draw.dart';
 
 
-// ignore: must_be_immutable
-class  Home extends StatefulWidget {
-  int currentIndex = 0;
+class Blogs extends StatefulWidget{
   @override
-  _HomeState createState() => _HomeState();
+  _BlogsState createState() => _BlogsState();
 }
 
-class _HomeState extends State<Home> {
-  bool hovering = false;
+class _BlogsState extends State<Blogs> {
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
     double height = MediaQuery.of(context).size.height;
-      return SafeArea(
+    return SafeArea(
           child: Scaffold(
             drawer: NavDrawer(),
-            appBar: appBar(height, width),
+            appBar: appBarMeth(height, width, 'Blogs'),
 
             body: Center(
                   child: ListView(
                   children: [
 
-                    ListOffres(),
-
-                    SizedBox(height: height * 0.05),
-
-                    ListPortfolios(),
-
-                    SizedBox(height: height * 0.03),
-                    Center(
-                      child: Text(
-                        'Derniers articles',
-                        style: GoogleFonts.ruda(
-                          textStyle: TextStyle(
-                            fontWeight: FontWeight.bold, 
-                            color: kTextColor, 
-                            fontSize: kTextSize
-                        )
-                        ),
-                      ),
-                    ),
-                    SizedBox(height: height * 0.04),
                     BlogCard(
                     "assets/images/blog1.jpeg", 
                     'Les Bienfaits de La Nature sur Notre Santé', 
@@ -68,11 +42,9 @@ class _HomeState extends State<Home> {
                   )
             ),
 
-            bottomNavigationBar: BottomNavyBarMeth(0),
+            bottomNavigationBar: BottomNavyBarMeth(4),
     )
     ,
   );
   }
-
-  
 }

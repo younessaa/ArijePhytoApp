@@ -22,23 +22,23 @@ class NavDrawer extends StatelessWidget {
                   
                 ),
             ),
-            listTileItem('Mon compte', width, height),
-            listTileItem('Portfolio', width, height),
-            listTileItem('PROMO', width, height),
-            listTileItem('Catégories', width, height),
-            listTileItem('Contact', width, height),
-            listTileItem('À Propos De', width, height),
-            listTileItem('Déconnexion', width, height),
+            listTileItem(context, 'Mon compte', width, height, null),
+            listTileItem(context, 'Portfolio', width, height, '/portfolio'),
+            listTileItem(context, 'PROMO', width, height, null),
+            listTileItem(context, 'Catégories', width, height, '/categories'),
+            listTileItem(context, 'Contact', width, height, '/contact'),
+            listTileItem(context, 'À Propos De', width, height, '/aproposde'),
+            listTileItem(context, 'Déconnexion', width, height, null),
           ],
         ),
       ),
     );
   }
 
-  GestureDetector listTileItem(String string,double width, double height) {
+  GestureDetector listTileItem(BuildContext context, String string,double width, double height, String path) {
     return GestureDetector(
       onTap: () {
-
+        Navigator.popAndPushNamed(context, path);
       },
       child: Container(
         height: height * 0.075,
