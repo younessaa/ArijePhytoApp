@@ -1,5 +1,7 @@
 import 'package:arijephyto/screens/boutique/boutique.dart';
 import 'package:arijephyto/screens/categories/categories.dart';
+import 'package:arijephyto/screens/contact-aProposDe/aproposde.dart';
+import 'package:arijephyto/screens/contact-aProposDe/contact.dart';
 import 'package:arijephyto/screens/panier/panier.dart';
 import 'package:arijephyto/screens/portfolio/portfolio.dart';
 import 'package:arijephyto/screens/welcome/welcome_screen.dart';
@@ -30,6 +32,8 @@ class MyApp extends StatelessWidget {
         '/panier' : (context) => Panier(),
         '/blogs' : (context) => Blogs(),
         '/portfolio' : (context) => Portfolio(),
+        '/contact' : (context) => Contact(),
+        '/aproposde' : (context) => AproposDe(),
       },
     );
   }
