@@ -25,7 +25,7 @@ Widget build(BuildContext context) {
         splashColor: Color(0xFFF5F5F5),
         onTap: () {},
         child: Container(
-          height: height * 0.45,
+          height: 320,
           width: width * 0.95,
           child: Padding( 
             padding: EdgeInsets.all(width * 0.02),
@@ -88,11 +88,11 @@ Widget build(BuildContext context) {
                         ),
                       ),
                       TextSpan(
-                        text: 'Pour en savoir plus',
+                        text: '\nPour en savoir plus',
                         style: GoogleFonts.roboto(
                           textStyle: TextStyle(
                             fontWeight: FontWeight.bold, 
-                            color: kPrimaryColor, 
+                            color: kPrimaryColorS, 
                             fontSize: 18
                         )
                         ),

@@ -1,4 +1,4 @@
-import 'package:arijephyto/models/produitCard.dart';
+import 'package:arijephyto/components/classElement.dart';
 
 List<String> imgListOffres = [
   "assets/images/offre1.png",
@@ -62,4 +62,21 @@ List<double> listProduitsPrix = [
   35.00,
 ];
 
-List<ProduitCard> listProduits = imgListProduits.map((item) => ProduitCard(item , listPorduitsName[imgListProduits.indexOf(item)], 1, listProduitsPrix[imgListProduits.indexOf(item)])).toList();
+List<Produit> listProduitsC = imgListProduits.map((item) => Produit(item , listPorduitsName[imgListProduits.indexOf(item)], 1, listProduitsPrix[imgListProduits.indexOf(item)], Produit.idClasse++)).toList();
+
+Produit getProduit(List<Produit> list, int id){
+  for (var i = 0; i < list.length; i++) {
+    if(list[i].idProduit == id){
+      return list[i];
+    }
+  }
+  return null;
+}
+
+double calculeSommePanier(List<Produit> list){
+  double somme = 0;
+  for (var i = 0; i < list.length; i++) {
+    somme += list[i].prodPrix;
+  }
+  return somme;
+}

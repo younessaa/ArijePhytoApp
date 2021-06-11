@@ -1,6 +1,7 @@
 import 'package:arijephyto/components/dataLists.dart';
 import 'package:arijephyto/models/appBar.dart';
 import 'package:arijephyto/models/bottomNavBar.dart';
+import 'package:arijephyto/models/produitCard.dart';
 import 'package:flutter/material.dart';
 import '../nav-draw.dart';
 
@@ -20,8 +21,11 @@ class _BoutiqueState extends State<Boutique> {
             drawer: NavDrawer(),
             appBar: appBarMeth(height, width, 'Boutique'),
 
-            body: ListView(
-              children : listProduits,
+            body: new ListView.builder(
+              itemCount: listProduitsC.length,
+              itemBuilder: (BuildContext ctxt, int index) {
+                return Padding(padding: EdgeInsets.only(bottom: 15), child : ProduitCard(listProduitsC[index]));
+              }
             ),
             bottomNavigationBar: BottomNavyBarMeth(1),
     )

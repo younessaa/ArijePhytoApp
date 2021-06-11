@@ -1,10 +1,16 @@
+import 'package:arijephyto/components/classElement.dart';
+import 'package:arijephyto/components/dataLists.dart';
 import 'package:arijephyto/models/appBar.dart';
 import 'package:arijephyto/models/bottomNavBar.dart';
+import 'package:arijephyto/models/produitCardPanier.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import '../../constants.dart';
 import '../nav-draw.dart';
 
 
 class Panier extends StatefulWidget{
+  static List<Produit> listProduitsPanier = [];
   @override
   _PanierState createState() => _PanierState();
 }
@@ -19,10 +25,91 @@ class _PanierState extends State<Panier> {
             drawer: NavDrawer(),
             appBar: appBarMeth(height, width, 'Panier'),
 
-            body: Center(
-                  child: Text('yoooow')
+            body: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children : [
+                Container(
+                  height: height * 0.68,
+                  child: new ListView.builder(
+                  itemCount: Panier.listProduitsPanier.length,
+                  itemBuilder: (BuildContext ctxt, int index) {
+                    return Padding(padding: EdgeInsets.only(bottom: 10, top: 5), child : ProduitCardPanier(Panier.listProduitsPanier[index]));
+                  }
+                  ),
+                ),
+                Container(
+                  decoration: BoxDecoration(
+                  color: Colors.blue[50],
+                  borderRadius: BorderRadius.only(topLeft: Radius.circular(20), topRight: Radius.circular(20)),
+                  ),
+                  child: Column(
+                    children: [
+                      Center(
+                        child: Padding(
+                          padding: const EdgeInsets.only(top : 14.0),
+                          child: Text(
+                            'Total panier',
+                            style: GoogleFonts.roboto(
+                                  textStyle: TextStyle(
+                                    fontWeight: FontWeight.bold, 
+                                    color: Colors.black, 
+                                    fontSize: kTextSizeTitle
+                                )
+                            ),
+                          ),
+                        ),
+                      ),
+                      Row(
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.only(left : 14.0),
+                            child: Text(
+                            'Total',
+                            style: GoogleFonts.roboto(
+                                  textStyle: TextStyle(
+                                    fontWeight: FontWeight.bold, 
+                                    color: Colors.black, 
+                                    fontSize: kTextSizeTitle
+                                )
+                            ),
+                        ),
+                          ),
+                        Spacer(),
+                        Padding(
+                          padding: const EdgeInsets.only(right : 14.0),
+                          child: Text(
+                            calculeSommePanier(Panier.listProduitsPanier).toString() + '0 Dh',
+                            style: GoogleFonts.roboto(
+                                  textStyle: TextStyle(
+                                    fontWeight: FontWeight.bold, 
+                                    color: Colors.black, 
+                                    fontSize: kTextSizeTitle
+                                )
+                            ),
+                          ),
+                        ),
+                        ],
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(bottom : 14.0),
+                        child: ClipRRect(
+                        borderRadius: BorderRadius.circular(kDefaultRadius),
+                        child: TextButton(
+                                child: Text(' Passer commande ',
+                                        style: GoogleFonts.roboto(textStyle: TextStyle(fontWeight: FontWeight.bold, color: Colors.white, fontSize: 25)),
+                                      ),
+                                onPressed: () {
+                                  //Navigator.popAndPushNamed(context, '/home');
+                                },
+                                style: TextButton.styleFrom(backgroundColor: Color(0xFF67C37B), enableFeedback: false,),
+                              ),    
+                        ),
+                      ),
+                    ],
+                  ),
+                )
+              ],
             ),
-
             bottomNavigationBar: BottomNavyBarMeth(3),
     )
     ,

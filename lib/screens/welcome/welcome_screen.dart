@@ -48,7 +48,6 @@ class Welcome extends StatelessWidget{
                 decoration: BoxDecoration(boxShadow: [
                               BoxShadow(
                                 color: Colors.green.withOpacity(0.5),
-                                //spreadRadius: 1,
                                 blurRadius: 25,
                                 offset: Offset(0, 10), // changes position of shadow
                               ),
@@ -66,7 +65,7 @@ class Welcome extends StatelessWidget{
                             //Navigator.pushNamed(context, '/home');
                             Navigator.popAndPushNamed(context, '/home');
                           },
-                          style: TextButton.styleFrom(backgroundColor: kPrimaryColor, enableFeedback: false,),
+                          style: TextButton.styleFrom(backgroundColor: kPrimaryColor, enableFeedback: true,),
                         ),    
                 ),
               ),

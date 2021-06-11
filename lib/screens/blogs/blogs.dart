@@ -28,7 +28,7 @@ class _BlogsState extends State<Blogs> {
                     "assets/images/blog1.jpeg", 
                     'Les Bienfaits de La Nature sur Notre Santé', 
                     "5 FÉV 2018", 
-                    "Arbres, Fleurs, Soleil, nous entourent au quotidien mais nous n’imaginons pas à quel point ils jouent un rôle dans notre vie. Humeur, comportement, émotions, dépendent réellement de la présence de la nature. Des..."
+                    "Arbres, Fleurs, Soleil, nous entourent au quotidien mais nous n’imaginons pas à quel point ils jouent un rôle dans notre vie. Humeur, comportement, émotions, dépendent réellement de la présence de la nature. "
                     ),
 
                     BlogCard(
