@@ -92,7 +92,8 @@ Widget build(BuildContext context) {
                               if(getProduit(Panier.listProduitsPanier, widget.produit.idProduit) == null){
                                 widget.produit.prodNombre = 1;
                                 Panier.listProduitsPanier.add(widget.produit);
-                              }   
+                                Panier.somme = calculeSommePanier(Panier.listProduitsPanier);
+                              }
                             });
                             Navigator.popAndPushNamed(context, '/panier');
                           },

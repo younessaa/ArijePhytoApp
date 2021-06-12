@@ -76,7 +76,7 @@ Produit getProduit(List<Produit> list, int id){
 double calculeSommePanier(List<Produit> list){
   double somme = 0;
   for (var i = 0; i < list.length; i++) {
-    somme += list[i].prodPrix;
+    somme += list[i].prodPrix * list[i].prodNombre;
   }
   return somme;
 }

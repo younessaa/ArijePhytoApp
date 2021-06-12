@@ -1,4 +1,5 @@
 import 'package:arijephyto/components/classElement.dart';
+import 'package:arijephyto/components/dataLists.dart';
 import 'package:arijephyto/screens/panier/panier.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -67,8 +68,12 @@ Widget build(BuildContext context) {
                         GestureDetector(
                           onTap: () {
                             setState(() {
-                              if(widget.produit.prodNombre > 1)
+                              if(widget.produit.prodNombre > 1){
                                 widget.produit.prodNombre--;
+                                Panier.somme = calculeSommePanier(Panier.listProduitsPanier);
+                                Navigator.popAndPushNamed(context, '/panier');
+                              }
+                                
                             });
                           },
                           child: Container(
@@ -108,6 +113,8 @@ Widget build(BuildContext context) {
                           onTap: () {
                             setState(() {
                               widget.produit.prodNombre++;
+                              Panier.somme = calculeSommePanier(Panier.listProduitsPanier);
+                              Navigator.popAndPushNamed(context, '/panier');
                             });
                           },
                           child: Container(
@@ -145,6 +152,7 @@ Widget build(BuildContext context) {
                         onTap: () {
                           setState(() {
                             Panier.listProduitsPanier.remove(widget.produit);
+                            Panier.somme = calculeSommePanier(Panier.listProduitsPanier);
                             Navigator.popAndPushNamed(context, '/panier');
                           });
                         },

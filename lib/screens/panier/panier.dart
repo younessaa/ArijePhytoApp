@@ -11,6 +11,7 @@ import '../nav-draw.dart';
 
 class Panier extends StatefulWidget{
   static List<Produit> listProduitsPanier = [];
+  static double somme = calculeSommePanier(listProduitsPanier);
   @override
   _PanierState createState() => _PanierState();
 }
@@ -24,7 +25,6 @@ class _PanierState extends State<Panier> {
           child: Scaffold(
             drawer: NavDrawer(),
             appBar: appBarMeth(height, width, 'Panier'),
-
             body: Column(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children : [
@@ -78,7 +78,7 @@ class _PanierState extends State<Panier> {
                         Padding(
                           padding: const EdgeInsets.only(right : 14.0),
                           child: Text(
-                            calculeSommePanier(Panier.listProduitsPanier).toString() + '0 Dh',
+                            Panier.somme.toString() + '0 Dh',
                             style: GoogleFonts.roboto(
                                   textStyle: TextStyle(
                                     fontWeight: FontWeight.bold, 
