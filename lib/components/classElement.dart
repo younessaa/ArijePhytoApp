@@ -4,7 +4,11 @@ class Produit {
   String prodTitle;
   int prodNombre;
   double prodPrix;
+  double lastPrix;
   String prodImage;
   int idProduit;
-  Produit(this.prodImage, this.prodTitle, this.prodNombre, this.prodPrix, this.idProduit);
+  String prodDescription;
+  String prodText;
+  Produit({this.prodImage, this.prodTitle, this.prodNombre, this.prodPrix, this.idProduit, this.lastPrix, this.prodDescription, this.prodText});
 }
+

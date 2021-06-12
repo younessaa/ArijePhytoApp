@@ -29,7 +29,7 @@ class _PanierState extends State<Panier> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children : [
                 Container(
-                  height: height * 0.68,
+                  height: height * 0.6,
                   child: new ListView.builder(
                   itemCount: Panier.listProduitsPanier.length,
                   itemBuilder: (BuildContext ctxt, int index) {

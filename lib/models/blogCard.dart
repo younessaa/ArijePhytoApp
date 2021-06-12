@@ -25,7 +25,7 @@ Widget build(BuildContext context) {
         splashColor: Color(0xFFF5F5F5),
         onTap: () {},
         child: Container(
-          height: height * 0.35,
+          height: height * 0.42,
           width: width * 0.95,
           child: Padding( 
             padding: EdgeInsets.all(width * 0.02),

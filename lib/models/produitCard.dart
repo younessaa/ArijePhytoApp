@@ -28,7 +28,7 @@ Widget build(BuildContext context) {
           splashColor: Color(0xFFF5F5FF),
           onTap: () {},
           child: Container(
-            height: height * 0.28,
+            height: height * 0.3,
             width: width * 0.8,
             child: Padding( 
               padding: EdgeInsets.all(10),
@@ -91,7 +91,7 @@ Widget build(BuildContext context) {
                             setState(() {
                               if(getProduit(Panier.listProduitsPanier, widget.produit.idProduit) == null){
                                 widget.produit.prodNombre = 1;
-                                Panier.listProduitsPanier.add(widget.produit);
+                                Panier.listProduitsPanier.insert(0, widget.produit);
                                 Panier.somme = calculeSommePanier(Panier.listProduitsPanier);
                               }
                             });

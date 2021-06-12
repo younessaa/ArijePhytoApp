@@ -28,7 +28,7 @@ Widget build(BuildContext context) {
           splashColor: Color(0xFFF5F5FF),
           onTap: () {},
           child: Container(
-            height: 180,
+            height: height * 0.18,
             width: width * 0.95,
             child: Padding( 
               padding: EdgeInsets.all(10),
@@ -104,7 +104,7 @@ Widget build(BuildContext context) {
                               textStyle: TextStyle(
                                 fontWeight: FontWeight.bold, 
                                 color: kTextColor, 
-                                fontSize: 30
+                                fontSize: 26
                             )
                           ),
                         ),
@@ -145,27 +145,32 @@ Widget build(BuildContext context) {
                 ),
 
                 Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
                     Center(
-                      child: GestureDetector(
-                        onTap: () {
-                          setState(() {
-                            Panier.listProduitsPanier.remove(widget.produit);
-                            Panier.somme = calculeSommePanier(Panier.listProduitsPanier);
-                            Navigator.popAndPushNamed(context, '/panier');
-                          });
-                        },
-                        child: Text(
-                          'X',
-                          style: GoogleFonts.roboto(
-                              textStyle: TextStyle(
-                                fontWeight: FontWeight.bold, 
-                                color: Colors.redAccent, 
-                                fontSize: kTextSizeTitle
-                            )
+                      child: Row(
+                        children: [
+                          SizedBox(width: width * 0.105),
+                          GestureDetector(
+                            onTap: () {
+                              setState(() {
+                                Panier.listProduitsPanier.remove(widget.produit);
+                                Panier.somme = calculeSommePanier(Panier.listProduitsPanier);
+                                Navigator.popAndPushNamed(context, '/panier');
+                              });
+                            },
+                            child: Text(
+                              'X',
+                              style: GoogleFonts.roboto(
+                                  textStyle: TextStyle(
+                                    fontWeight: FontWeight.bold, 
+                                    color: Colors.redAccent, 
+                                    fontSize: kTextSizeTitle
+                                )
+                                ),
                             ),
-                        ),
+                          ),
+                        ],
                       ),
                     ),
                     SizedBox(height: 20,),

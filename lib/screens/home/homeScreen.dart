@@ -1,3 +1,4 @@
+import 'package:arijephyto/components/dataLists.dart';
 import 'package:arijephyto/models/appBar.dart';
 import 'package:arijephyto/models/bottomNavBar.dart';
 import 'package:arijephyto/models/listsOffresPorts.dart';
@@ -30,7 +31,7 @@ class _HomeState extends State<Home> {
                   child: ListView(
                   children: [
 
-                    ListOffres(),
+                    ListOffres(imgListOffres, Colors.greenAccent),
 
                     SizedBox(height: height * 0.05),
 

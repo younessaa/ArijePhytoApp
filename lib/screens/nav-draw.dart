@@ -24,7 +24,7 @@ class NavDrawer extends StatelessWidget {
             ),
             listTileItem(context, 'Mon compte', width, height, null),
             listTileItem(context, 'Portfolio', width, height, '/portfolio'),
-            listTileItem(context, 'PROMO', width, height, null),
+            listTileItem(context, 'PROMO', width, height, '/promo'),
             listTileItem(context, 'Catégories', width, height, '/categories'),
             listTileItem(context, 'Contact', width, height, '/contact'),
             listTileItem(context, 'À Propos De', width, height, '/aproposde'),

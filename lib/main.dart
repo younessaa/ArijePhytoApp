@@ -8,6 +8,7 @@ import 'package:arijephyto/screens/welcome/welcome_screen.dart';
 import 'package:flutter/material.dart';
 import 'screens/blogs/blogs.dart';
 import 'screens/home/homeScreen.dart';
+import 'screens/promo/promo.dart';
 import 'theme.dart';
 
 void main() {
@@ -34,6 +35,7 @@ class MyApp extends StatelessWidget {
         '/portfolio' : (context) => Portfolio(),
         '/contact' : (context) => Contact(),
         '/aproposde' : (context) => AproposDe(),
+        '/promo' : (context) => Promo(),
       },
     );
   }
