@@ -4,8 +4,10 @@ import 'package:arijephyto/screens/boutique/produit.dart';
 import 'package:arijephyto/screens/categories/categories.dart';
 import 'package:arijephyto/screens/contact-aProposDe/aproposde.dart';
 import 'package:arijephyto/screens/contact-aProposDe/contact.dart';
+import 'package:arijephyto/screens/login/login.dart';
 import 'package:arijephyto/screens/panier/panier.dart';
 import 'package:arijephyto/screens/portfolio/portfolio.dart';
+import 'package:arijephyto/screens/signup/signup.dart';
 import 'package:arijephyto/screens/welcome/welcome_screen.dart';
 import 'package:flutter/material.dart';
 import 'screens/blogs/blogs.dart';
@@ -40,6 +42,8 @@ class MyApp extends StatelessWidget {
         '/promo' : (context) => Promo(),
         '/produit' : (context) => ProduitItem(),
         '/blogscreen' : (context) => BlogScreen(),
+        '/signup' : (context) => Signup(),
+        '/login' : (context) => Login(),
       },
     );
   }

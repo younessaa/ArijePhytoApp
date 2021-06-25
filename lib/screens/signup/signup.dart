@@ -6,12 +6,12 @@ import 'package:arijephyto/screens/login/login.dart';
 import 'package:flutter/material.dart';
 import '../nav-draw.dart';
 
-class signup extends StatefulWidget {
+class Signup extends StatefulWidget {
   @override
-  _signupState createState() => _signupState();
+  _SignupState createState() => _SignupState();
 }
 
-class _signupState extends State<signup> {
+class _SignupState extends State<Signup> {
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
@@ -43,47 +43,47 @@ class _signupState extends State<signup> {
             SizedBox(
               height: 10,
             ),
-            blocForum('Prénom', false),
+            BlocForum('Prénom', false),
             SizedBox(
               height: 10,
             ),
-            blocForum('Nom', false),
+            BlocForum('Nom', false),
             SizedBox(
               height: 10,
             ),
-            blocForum('Adresse 1', false),
+            BlocForum('Adresse 1', false),
             SizedBox(
               height: 10,
             ),
-            blocForum('Ville', false),
+            BlocForum('Ville', false),
             SizedBox(
               height: 10,
             ),
-            blocForum('Région', false),
+            BlocForum('Région', false),
             SizedBox(
               height: 10,
             ),
-            blocForum('Code poste', false),
+            BlocForum('Code poste', false),
             SizedBox(
               height: 10,
             ),
-            blocForum('Pays', false),
+            BlocForum('Pays', false),
             SizedBox(
               height: 10,
             ),
-            blocForum('Téléphone', false),
+            BlocForum('Téléphone', false),
             SizedBox(
               height: 10,
             ),
-            blocForum('Email', false),
+            BlocForum('Email', false),
             SizedBox(
               height: 10,
             ),
-            blocForum('Mots', true),
+            BlocForum('Mots', true),
             SizedBox(
               height: 10,
             ),
-            blocForum("Confirmer le mot de passe", true),
+            BlocForum("Confirmer le mot de passe", true),
             SizedBox(
               height: 10,
             ),

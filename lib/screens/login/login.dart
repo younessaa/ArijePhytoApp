@@ -38,11 +38,11 @@ class _LoginState extends State<Login> {
                   "S'identifier",
                   style: TextStyle(fontSize: 40, color: Colors.black),
                 ),
-                blocForum("Email", false),
+                BlocForum("Email", false),
                 SizedBox(
                   height: 20,
                 ),
-                blocForum('Mot de passe', true),
+                BlocForum('Mot de passe', true),
                 SizedBox(
                   height: 10,
                 ),
@@ -77,7 +77,7 @@ class _LoginState extends State<Login> {
                       minWidth: MediaQuery.of(context).size.width,
                       padding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
                       onPressed: () {
-                        signup();
+                        Signup();
                       },
                       child: Text("Créer un compte",
                           textAlign: TextAlign.center,
