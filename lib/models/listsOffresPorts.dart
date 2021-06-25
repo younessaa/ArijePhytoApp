@@ -1,5 +1,6 @@
 import 'package:arijephyto/components/dataLists.dart';
 import 'package:arijephyto/components/lists.dart';
+import 'package:arijephyto/models/portfolioCard.dart';
 import 'package:arijephyto/models/promoCard.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
@@ -67,36 +68,12 @@ class ListPortfolios extends StatelessWidget {
             ),
             items: imgListPort.map((item) => ClipRRect(
                     borderRadius: BorderRadius.circular(kDefaultRadius),
-                    child: Stack(
-                      children : [
-                        Image.asset(item, width: width * 0.8,),
-                        Positioned(
-                          bottom: 0.0,
-                          left: 0.0,
-                          right: 0.0,
-                          child: Container(
-                                  decoration: BoxDecoration(
-                                    gradient: LinearGradient(
-                                      colors: [
-                                        Colors.grey[300],
-                                        Colors.grey[50]
-                                      ],
-                                      begin: Alignment.bottomCenter,
-                                      end: Alignment.topCenter,
-                                    ),
-                                  ),
-                                  padding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
-                                  child: Text(
-                                    listPortName[imgListPort.indexOf(item)],
-                                    style: TextStyle(
-                                      color: kTextColor,
-                                      fontSize: 16,
-                                      fontWeight: FontWeight.bold,
-                                    ),
-                                  ),
-                                ),
-                        ),
-                        ]),
+                    child: GestureDetector(
+                        onTap: (){
+                          Navigator.pushNamed(context, '/' + listPortName[imgListPort.indexOf(item)]);
+                        },
+                        child: PortfolioCard(width: width, imgPath: item, name: listPortName[imgListPort.indexOf(item)],)
+                      ),
                   )).toList(),
             ),
     );
@@ -104,51 +81,33 @@ class ListPortfolios extends StatelessWidget {
 }
 
 class ListPortfoliosV extends StatelessWidget{
+  final bool vertical;
+  final List<String> list;
+  ListPortfoliosV({this.vertical, this.list});
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
     return Center(
       child: ListView(
-        children: imgListPort.map((item) => Padding(
+        scrollDirection: vertical == true ? Axis.vertical : Axis.horizontal,
+        children: list.map((item) => Padding(
           padding: EdgeInsets.only(left: width * 0.08, right : width * 0.08),
           child: ClipRRect(
                       borderRadius: BorderRadius.circular(kDefaultRadius),
-                      child: Stack(
-                        children : [
-                          Center(child: Image.asset(item, width: width * 0.7,)),
-                          Positioned(
-                            bottom: 0.0,
-                            left: 0.0,
-                            right: 0.0,
-                            child: Container(
-                                    decoration: BoxDecoration(
-                                      gradient: LinearGradient(
-                                        colors: [
-                                          Colors.grey[300],
-                                          Colors.grey[50]
-                                        ],
-                                        begin: Alignment.bottomCenter,
-                                        end: Alignment.topCenter,
-                                      ),
-                                    ),
-                                    padding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
-                                    child: Text(
-                                      listPortName[imgListPort.indexOf(item)],
-                                      style: TextStyle(
-                                        color: kTextColor,
-                                        fontSize: 16,
-                                        fontWeight: FontWeight.bold,
-                                      ),
-                                    ),
-                                  ),
-                          ),
-                          ]),
+                      child: GestureDetector(
+                        onTap: (){
+                          Navigator.pushNamed(context, '/' + listPortName[imgListPort.indexOf(item)]);
+                        },
+                        child: PortfolioCard(width: width, imgPath: item, name: listPortName[imgListPort.indexOf(item)],)
+                      ),
                     ),
         )).toList(),
         ),
     );
   }
 }
+
+
 
 
 class ListPromos extends StatelessWidget{

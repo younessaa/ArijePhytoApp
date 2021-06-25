@@ -1,3 +1,4 @@
+import 'package:arijephyto/components/dataLists.dart';
 import 'package:arijephyto/models/appBar.dart';
 import 'package:arijephyto/models/bottomNavBar.dart';
 import 'package:arijephyto/models/listsOffresPorts.dart';
@@ -20,7 +21,7 @@ class _PortfolioState extends State<Portfolio> {
             drawer: NavDrawer(),
             appBar: appBarMeth(height, width, 'Portfolio'),
 
-            body: ListPortfoliosV(),
+            body: ListPortfoliosV(vertical: true, list: imgListPort,),
 
             bottomNavigationBar: BottomNavyBarMeth(-1),
     )
