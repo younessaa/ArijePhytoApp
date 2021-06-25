@@ -10,6 +10,7 @@ const kIconColor = Colors.white;
 const kIconColorU = Color(0xFF263238);
 const kBackgroundColor = Color(0xFFF9F8FD);
 const kSecondaryColor = Color(0xFF76FF03);
+const kBackground = Color(0xFFF5F5F5);
 
 
 const kContentColorLightTheme = Color(0xFF1D1D35);
