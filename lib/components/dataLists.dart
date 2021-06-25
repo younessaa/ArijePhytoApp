@@ -1,4 +1,3 @@
-import 'package:arijephyto/components/classElement.dart';
 
 List<String> imgListOffres = [
   "assets/images/offre1.png",
@@ -91,41 +90,3 @@ List<double> listProduitsPrix = [
   35.00,
 ];
 
-List<Produit> listProduitsC = imgListProduits.map((item) => Produit(
-    prodImage: item, 
-    prodNombre: 1, 
-    prodPrix: listProduitsPrix[imgListProduits.indexOf(item)], 
-    prodTitle: listPorduitsName[imgListProduits.indexOf(item)],
-    idProduit: Produit.idClasse++
-    )
-  ).toList();
-
-List<Produit> listProduitsPromo = imgListPromos.map((item) => Produit(
-    prodImage: item, 
-    prodNombre: 1, 
-    prodPrix: listPromoPrix[imgListPromos.indexOf(item)], 
-    prodTitle: listPromosName[imgListPromos.indexOf(item)],
-    idProduit: Produit.idClasse++,
-    lastPrix: listPromolastPrix[imgListPromos.indexOf(item)],
-    prodDescription: listPromosDesc[imgListPromos.indexOf(item)],
-    prodText: listPromosText[imgListPromos.indexOf(item)],
-    )
-  ).toList();
-
-
-Produit getProduit(List<Produit> list, int id){
-  for (var i = 0; i < list.length; i++) {
-    if(list[i].idProduit == id){
-      return list[i];
-    }
-  }
-  return null;
-}
-
-double calculeSommePanier(List<Produit> list){
-  double somme = 0;
-  for (var i = 0; i < list.length; i++) {
-    somme += list[i].prodPrix * list[i].prodNombre;
-  }
-  return somme;
-}

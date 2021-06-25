@@ -1,4 +1,5 @@
 import 'package:arijephyto/components/dataLists.dart';
+import 'package:arijephyto/components/lists.dart';
 import 'package:arijephyto/models/listsOffresPorts.dart';
 import 'package:arijephyto/models/promoCard.dart';
 import 'package:flutter/material.dart';
@@ -10,7 +11,6 @@ import '../../constants.dart';
 class Promo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    //double height = MediaQuery.of(context).size.height;
     return SafeArea(
           child: Scaffold(
             appBar: AppBar(

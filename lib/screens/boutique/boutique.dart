@@ -1,4 +1,4 @@
-import 'package:arijephyto/components/dataLists.dart';
+import 'package:arijephyto/components/lists.dart';
 import 'package:arijephyto/models/appBar.dart';
 import 'package:arijephyto/models/bottomNavBar.dart';
 import 'package:arijephyto/models/produitCard.dart';

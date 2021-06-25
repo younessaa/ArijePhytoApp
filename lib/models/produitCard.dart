@@ -1,5 +1,5 @@
 import 'package:arijephyto/components/classElement.dart';
-import 'package:arijephyto/components/dataLists.dart';
+import 'package:arijephyto/components/logicFunctions.dart';
 import 'package:arijephyto/screens/panier/panier.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -26,9 +26,11 @@ Widget build(BuildContext context) {
         color: Color(0xFFF5F5F5),
         child: InkWell(
           splashColor: Color(0xFFF5F5FF),
-          onTap: () {},
+          onTap: () {
+            widget.produit.prodNombre = 1;
+            Navigator.pushNamed(context, '/produit', arguments: widget.produit);
+          },
           child: Container(
-            height: height * 0.3,
             width: width * 0.8,
             child: Padding( 
               padding: EdgeInsets.all(10),
@@ -41,8 +43,8 @@ Widget build(BuildContext context) {
                       ClipRRect(
                         borderRadius: BorderRadius.circular(kDefaultRadius),
                         child: Container(
-                          width: width * 0.35, 
-                          height: height * 0.2,
+                          width: width * 0.25, 
+                          height: height * 0.15,
                           child: Image.asset(widget.produit.prodImage, )
                           ),
                         ),
@@ -67,7 +69,7 @@ Widget build(BuildContext context) {
                         ),
                         SizedBox(height: 20,),
                         Text(
-                        widget.produit.prodPrix.toString()+'0.د.م',
+                        widget.produit.prodPrix.toString()+'0 Dh',
                         style: GoogleFonts.roboto(
                             textStyle: TextStyle(
                               fontWeight: FontWeight.normal, 
@@ -83,21 +85,20 @@ Widget build(BuildContext context) {
                   ),
                   Container(
                     width: width * 0.6,
-                    child: TextButton(
+                    child: MaterialButton(
                           child: Text('AJOUTER AU PANIER',
                                   style: GoogleFonts.ruda(textStyle: TextStyle(fontWeight: FontWeight.bold, color: Colors.white, fontSize: 16)),
                                 ),
                           onPressed: () {
                             setState(() {
                               if(getProduit(Panier.listProduitsPanier, widget.produit.idProduit) == null){
-                                widget.produit.prodNombre = 1;
                                 Panier.listProduitsPanier.insert(0, widget.produit);
                                 Panier.somme = calculeSommePanier(Panier.listProduitsPanier);
                               }
                             });
                             Navigator.popAndPushNamed(context, '/panier');
                           },
-                          style: TextButton.styleFrom(backgroundColor: Color(0xFF6C8DAB), enableFeedback: false,),
+                          color: Color(0xFF6C8DAB),
                           ),
                   )
                 ],

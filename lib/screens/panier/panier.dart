@@ -1,5 +1,5 @@
 import 'package:arijephyto/components/classElement.dart';
-import 'package:arijephyto/components/dataLists.dart';
+import 'package:arijephyto/components/logicFunctions.dart';
 import 'package:arijephyto/models/appBar.dart';
 import 'package:arijephyto/models/bottomNavBar.dart';
 import 'package:arijephyto/models/produitCardPanier.dart';

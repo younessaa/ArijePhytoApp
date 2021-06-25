@@ -3,10 +3,15 @@ import 'package:google_fonts/google_fonts.dart';
 import '../../constants.dart';
 
 
-class Welcome extends StatelessWidget{
+class Welcome extends StatefulWidget{
+  @override
+  _WelcomeState createState() => _WelcomeState();
+}
+
+class _WelcomeState extends State<Welcome> {
+
   @override
   Widget build(BuildContext context) {
-    //double width = MediaQuery.of(context).size.width;
     double height = MediaQuery.of(context).size.height;
     return Scaffold(
       body: ListView(

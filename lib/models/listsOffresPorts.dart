@@ -1,4 +1,5 @@
 import 'package:arijephyto/components/dataLists.dart';
+import 'package:arijephyto/components/lists.dart';
 import 'package:arijephyto/models/promoCard.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
@@ -109,7 +110,7 @@ class ListPortfoliosV extends StatelessWidget{
     return Center(
       child: ListView(
         children: imgListPort.map((item) => Padding(
-          padding: const EdgeInsets.all(10.0),
+          padding: EdgeInsets.only(left: width * 0.08, right : width * 0.08),
           child: ClipRRect(
                       borderRadius: BorderRadius.circular(kDefaultRadius),
                       child: Stack(

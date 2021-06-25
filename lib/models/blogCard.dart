@@ -1,14 +1,12 @@
+import 'package:arijephyto/components/classElement.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../constants.dart';
 
 class BlogCard extends StatefulWidget {
-  final String blogTitle;
-  final String blogTime;
-  final String blogDescription;
-  final String blogImage;
-  BlogCard(this.blogImage, this.blogTitle, this.blogTime, this.blogDescription);
+  final Blog blog;
+  BlogCard(this.blog);
   @override 
   _BlogCardState createState() => _BlogCardState();
 }
@@ -23,9 +21,11 @@ Widget build(BuildContext context) {
       color: Color(0xFFF5F5F5),
       child: InkWell(
         splashColor: Color(0xFFF5F5F5),
-        onTap: () {},
+        onTap: () {
+          //Navigator.pushNamed(context, '/blogscreen', arguments: widget.blog);
+        },
         child: Container(
-          height: height * 0.42,
+          //height: height * 0.42,
           width: width * 0.95,
           child: Padding( 
             padding: EdgeInsets.all(width * 0.02),
@@ -34,21 +34,33 @@ Widget build(BuildContext context) {
               children: [
                 Row(
                   mainAxisSize: MainAxisSize.max,
-                  mainAxisAlignment: MainAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children : [
-                  Image.asset(widget.blogImage, width: width * 0.3, height: height * 0.15,),
+                  GestureDetector(
+                    onTap: (){
+                      Navigator.pushNamed(context, '/blogscreen', arguments: widget.blog);
+                    },
+                    child: Image.asset(widget.blog.blogImage, width: width * 0.2, )),
                   Center(
                     child: Container(
                       width: width * 0.4,
-                      child: Text(
-                        widget.blogTitle,
-                        style: GoogleFonts.roboto(
-                            textStyle: TextStyle(
-                              fontWeight: FontWeight.bold, 
-                              color: kTextColorTitle, 
-                              fontSize: 18
-                          )
+                      child: Padding(
+                        padding: EdgeInsets.only(left: width * 0.03),
+                        child: GestureDetector(
+                          onTap: (){
+                            Navigator.pushNamed(context, '/blogscreen', arguments: widget.blog);
+                          },
+                          child: Text(
+                            widget.blog.blogTitle,
+                            style: GoogleFonts.roboto(
+                                textStyle: TextStyle(
+                                  fontWeight: FontWeight.bold, 
+                                  color: kTextColorTitle, 
+                                  fontSize: 18
+                              )
+                              ),
                           ),
+                        ),
                       ),
                     ),
                   ),
@@ -60,7 +72,7 @@ Widget build(BuildContext context) {
                     ),
                     child: Center(
                       child: Text(
-                        widget.blogTime,
+                        widget.blog.blogTime,
                         style: GoogleFonts.roboto(
                           textStyle: TextStyle(
                             fontWeight: FontWeight.normal, 
@@ -78,7 +90,7 @@ Widget build(BuildContext context) {
                   text: TextSpan(
                     children: <TextSpan>[
                       TextSpan(
-                        text: widget.blogDescription,
+                        text: widget.blog.blogDescription.substring(0, 200) + '...',
                         style: GoogleFonts.roboto(
                           textStyle: TextStyle(
                             fontWeight: FontWeight.normal, 
@@ -87,19 +99,27 @@ Widget build(BuildContext context) {
                         )
                         ),
                       ),
-                      TextSpan(
-                        text: '\nPour en savoir plus',
-                        style: GoogleFonts.roboto(
-                          textStyle: TextStyle(
-                            fontWeight: FontWeight.bold, 
-                            color: kPrimaryColorS, 
-                            fontSize: 18
-                        )
-                        ),
-                      ),
                     ],
                   ),
                 ),
+                GestureDetector(
+                  onTap: (){
+                    Navigator.pushNamed(context, '/blogscreen', arguments: widget.blog);
+                  },
+                  child: Padding(
+                    padding: EdgeInsets.only(left: width * 0.5),
+                    child: Text(
+                        'Pour en savoir plus',
+                            style: GoogleFonts.roboto(
+                              textStyle: TextStyle(
+                                fontWeight: FontWeight.bold, 
+                                color: kPrimaryColorS, 
+                                fontSize: 18
+                            )
+                        ),
+                    ),
+                  ),
+                )
               ],
             ),
           ),

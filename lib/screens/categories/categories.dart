@@ -54,26 +54,27 @@ class _CategoriesState extends State<Categories> {
         Navigator.popAndPushNamed(context, path);
       },
       child: Container(
-        height: height * 0.075,
         decoration: BoxDecoration(
-          color: Color(0xFFF3F3F3),
+          color: Color(0xFFD6D6D6).withOpacity(0.8),
           border: Border(bottom: BorderSide(color: Colors.grey[500], width: 2))
         ),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Padding(
-              padding: EdgeInsets.only(left: width * 0.2),
-              child: Text(string,
-                    style: GoogleFonts.poppins(textStyle: TextStyle(fontWeight: FontWeight.bold, color: kTextColorB, fontSize: kTextSize)),
+        child: Padding(
+          padding: const EdgeInsets.all(12.0),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Padding(
+                padding: EdgeInsets.only(left: 18),
+                child: Text(string,
+                      style: GoogleFonts.poppins(textStyle: TextStyle(fontWeight: FontWeight.bold, color: kTextColorTitle, fontSize: kTextSize)),
+                ),
               ),
-            ),
-            SizedBox(height: height * 0.06,),
-            Padding(
-              padding: EdgeInsets.only(right: width * 0.05),
-              child: FaIcon(FontAwesomeIcons.angleRight),
-            ),
-          ],
+              Padding(
+                padding: EdgeInsets.only(right: width * 0.05),
+                child: FaIcon(FontAwesomeIcons.angleRight, color: kTextColorTitle,),
+              ),
+            ],
+          ),
         ),
       ),
     );

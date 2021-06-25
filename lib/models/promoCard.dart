@@ -25,7 +25,6 @@ Widget build(BuildContext context) {
           splashColor: Color(0xFFECF0ED),
           onTap: () {},
           child: Container(
-            height: height * 0.6,
             width: width * 0.9,
             child: Column(
               children: [
