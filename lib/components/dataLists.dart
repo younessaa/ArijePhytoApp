@@ -118,8 +118,8 @@ List<Produit> listProduitsAccessoires = [
   ),
   Produit(
     prodTitle: 'Diffuseur d’huiles essentielles en argile',
-    prodImage: 'assets/images/access1.jpg',
-    images: ['assets/images/access11.jpg',],
+    prodImage: 'assets/images/access2.jpg',
+    images: ['assets/images/access21.jpg',],
     prodDescription: ' ',
     prodQntStock: 10,
     prodNombre: 1,
@@ -236,8 +236,8 @@ List<Produit> listProduitsVisage = [
 List<Produit> listProduitsPaniersCad = [
   Produit(
     prodTitle: 'Panier cadeau 1',
-    prodImage: 'assets/images/paniarcad1.jpg',
-    images: ['assets/images/paniarcad11.jpg', 'assets/images/paniarcad12.jpg',],
+    prodImage: 'assets/images/paniercad1.jpg',
+    images: ['assets/images/paniercad11.jpg', 'assets/images/paniercad12.jpg',],
     prodDescription: '1 Huile nourissantes \n1 Argile \n1 Gommage Royal pour le corps \n1 Panier traditionnel',
     prodQntStock: 10,
     prodNombre: 1,
@@ -260,3 +260,5 @@ List<Produit> listProduitsHuilesNour = [
     prodPrix: 160,
   ),
 ];
+
+Person person;

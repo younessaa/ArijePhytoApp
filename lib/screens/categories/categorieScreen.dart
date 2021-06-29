@@ -1,10 +1,11 @@
 import 'package:arijephyto/components/dataLists.dart';
 import 'package:arijephyto/components/lists.dart';
-import 'package:arijephyto/models/appBar.dart';
 import 'package:arijephyto/models/bottomNavBar.dart';
 import 'package:arijephyto/models/produitCard.dart';
 import 'package:flutter/material.dart';
-import '../nav-draw.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:google_fonts/google_fonts.dart';
+import '../../constants.dart';
 
 
 class CategorieScreen extends StatefulWidget{
@@ -16,12 +17,22 @@ class _CategorieScreenState extends State<CategorieScreen> {
   @override
   Widget build(BuildContext context) {
     int i = ModalRoute.of(context).settings.arguments as int;
-    double width = MediaQuery.of(context).size.width;
-    double height = MediaQuery.of(context).size.height;
     return SafeArea(
           child: Scaffold(
-            drawer: NavDrawer(),
-            appBar: appBarMeth(height, width, categoriesName[i]),
+            appBar: AppBar(
+              leading: Center(
+                  child: GestureDetector(
+                    child: FaIcon(FontAwesomeIcons.arrowLeft, color: kTextColorTitle,),
+                    onTap: () {
+                      Navigator.pop(context);
+                    },
+                    )
+                  ),
+                  title: Text(
+                  categoriesName[i],
+                  style: GoogleFonts.poppins(textStyle: TextStyle(fontWeight: FontWeight.bold, color: kTextColorTitle, fontSize: kTextSize)),
+                  ),
+            ),
 
             body: new ListView.builder(
               itemCount: matrixList[i].length,
@@ -29,7 +40,7 @@ class _CategorieScreenState extends State<CategorieScreen> {
                 return Padding(padding: EdgeInsets.only(bottom: 15), child : ProduitCard(matrixList[i][index]));
               }
             ),
-            bottomNavigationBar: BottomNavyBarMeth(1),
+            bottomNavigationBar: BottomNavyBarMeth(-1),
     )
     ,
   );

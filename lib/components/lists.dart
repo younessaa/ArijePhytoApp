@@ -12,6 +12,18 @@ List<Produit> listProduitsC = imgListProduits.map((item) => Produit(
     )
   ).toList();
 
+  List<Produit> listProduitsClass = [
+    
+    listProduitsCheveux,
+    listProduitsAccessoires,
+    listProduitsCorps,
+    listProduitsVisage,
+    listProduitsEnfants,
+    listProduitsPaniersCad,
+    listProduitsAroma,
+    listProduitsHuilesNour
+  ].expand((x) => x).toList();
+
  List<List<Produit>> matrixList = [
    listProduitsAccessoires,
    listProduitsAroma,

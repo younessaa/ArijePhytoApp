@@ -51,7 +51,7 @@ class _CategoriesState extends State<Categories> {
   GestureDetector listTileItem(BuildContext context, String string,double width, double height, int i) {
     return GestureDetector(
       onTap: () {
-        Navigator.popAndPushNamed(context, '/categorieScreen', arguments: i);
+        Navigator.pushNamed(context, '/categorieScreen', arguments: i);
       },
       child: Container(
         decoration: BoxDecoration(

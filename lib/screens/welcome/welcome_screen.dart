@@ -1,4 +1,6 @@
+import 'package:arijephyto/components/classElement.dart';
 import 'package:arijephyto/components/dataLists.dart';
+import 'package:arijephyto/screens/signup/compteInfo.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../../constants.dart';
@@ -37,7 +39,7 @@ class _WelcomeState extends State<Welcome> {
                     children: <TextSpan>[
                       TextSpan(
                         text: 'Arije Phyto',
-                        style: GoogleFonts.ruda(textStyle: TextStyle(fontWeight: FontWeight.bold, color: kPrimaryColor, fontSize: kTextSize)),
+                        style: GoogleFonts.ruda(textStyle: TextStyle(fontWeight: FontWeight.bold, color: kPrimaryColorS, fontSize: kTextSize)),
                       ),
                       TextSpan(
                         text: ' est une Marque Marocaine de produits cosmétiques naturels qui traduit le concept « Vivre Au Naturel  » , En effet la Présentation d’Arije Phyto qui est une gamme de produit cosmétique naturels a 100% , sans aucun additif , ni colorant , ni parfum chimique . Nous avons toute la gamme qui englobe les produits pour : Visage , Corps et Cheveux .',
@@ -62,13 +64,14 @@ class _WelcomeState extends State<Welcome> {
                 padding: const EdgeInsets.only(left: 15, right: 15),
                 height:  height * 0.07,
                 child: ClipRRect(
-                  borderRadius: BorderRadius.circular(kDefaultRadius),
+                  borderRadius: BorderRadius.circular(10),
                   child: TextButton(
                           child: Text('C’est parti',
                                   style: GoogleFonts.ruda(textStyle: TextStyle(fontWeight: FontWeight.normal, color: kTextColorB, fontSize: kTextSize)),
                                 ),
                           onPressed: () {
                             setState(() {
+                              MonCompte.person = new Person();
                               isTheFisttime = false;
                             });
                             Navigator.popAndPushNamed(context, '/home');

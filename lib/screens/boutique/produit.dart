@@ -62,6 +62,14 @@ class _ProduitItemState extends State<ProduitItem> {
                         ],
                       ),
                       SizedBox(height: 10,),
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Text(
+                          prod.prodText,
+                          style : GoogleFonts.roboto(textStyle: TextStyle(fontWeight: FontWeight.bold, color: kPrimaryColorS, fontSize: 14)),
+                        ),
+                      ),
+                      SizedBox(height: 10,),
                       ajouteButton(width, prod, context),
                       SizedBox(height: 10,),
                     ],
@@ -70,6 +78,13 @@ class _ProduitItemState extends State<ProduitItem> {
                 
                 ListOffres(prod.images, Colors.greenAccent),
                 SizedBox(height: 25,),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Text(
+                    prod.prodDescription,
+                    style : GoogleFonts.roboto(textStyle: TextStyle(fontWeight: FontWeight.normal, color: kTextColorB, fontSize: 14)),
+                  ),
+                ),
                 Padding(
                   padding: const EdgeInsets.only(left: 20),
                   child: Text(
@@ -309,7 +324,7 @@ class _ProduitItemState extends State<ProduitItem> {
                             ),
                             SizedBox(height: 20,),
                             Container(
-                              width : width * 0.2,
+                              width : width * 0.3,
                               child : Text(
                                 prod.prodTitle,
                                 style: GoogleFonts.roboto(

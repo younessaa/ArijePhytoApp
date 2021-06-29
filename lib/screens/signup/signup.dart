@@ -2,7 +2,7 @@ import 'package:arijephyto/constants.dart';
 import 'package:arijephyto/models/appBar.dart';
 import 'package:arijephyto/models/forum.dart';
 import 'package:arijephyto/models/bottomNavBar.dart';
-import 'package:arijephyto/screens/login/login.dart';
+import 'package:arijephyto/screens/signup/compteInfo.dart';
 import 'package:flutter/material.dart';
 import '../nav-draw.dart';
 
@@ -20,7 +20,6 @@ class _SignupState extends State<Signup> {
         child: Scaffold(
       drawer: NavDrawer(),
       appBar: appBarMeth(height, width, "Créer un compte"),
-      bottomNavigationBar: BottomNavyBarMeth(3),
       body: Center(
         child: ListView(
           children: <Widget>[
@@ -47,11 +46,11 @@ class _SignupState extends State<Signup> {
             SizedBox(
               height: 10,
             ),
-            BlocForum('Nom', false),
+            BlocForum('Nom', false,),
             SizedBox(
               height: 10,
             ),
-            BlocForum('Adresse 1', false),
+            BlocForum('Adresse', false),
             SizedBox(
               height: 10,
             ),
@@ -75,11 +74,11 @@ class _SignupState extends State<Signup> {
             SizedBox(
               height: 10,
             ),
-            BlocForum('Email', false),
+            BlocForum('Email', false,),
             SizedBox(
               height: 10,
             ),
-            BlocForum('Mots', true),
+            BlocForum('Mot de passe', true),
             SizedBox(
               height: 10,
             ),
@@ -92,13 +91,17 @@ class _SignupState extends State<Signup> {
                   left: 80, top: 15, right: 80, bottom: 0),
               child: Material(
                 elevation: 5.0,
-                borderRadius: BorderRadius.circular(30.0),
+                borderRadius: BorderRadius.circular(10.0),
                 color: kPrimaryColor,
                 child: MaterialButton(
                   minWidth: MediaQuery.of(context).size.width,
                   padding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
                   onPressed: () {
-                    Login();
+                    setState(() {
+                    });
+                    print(MonCompte.person.getEmail.toString());
+                    if(MonCompte.person.getEmail.toString() != null)
+                      Navigator.popAndPushNamed(context, '/moncompte');
                   },
                   child: Text("Créer un compte",
                       textAlign: TextAlign.center,
@@ -112,13 +115,13 @@ class _SignupState extends State<Signup> {
                   left: 80, top: 20, right: 80, bottom: 20),
               child: Material(
                 elevation: 5.0,
-                borderRadius: BorderRadius.circular(30.0),
+                borderRadius: BorderRadius.circular(10.0),
                 color: kTextColorTitle,
                 child: MaterialButton(
                   minWidth: MediaQuery.of(context).size.width,
                   padding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
                   onPressed: () {
-                    Login();
+                    Navigator.pushNamed(context, '/login');
                   },
                   child: Text("S'identifier",
                       textAlign: TextAlign.center,
@@ -130,6 +133,7 @@ class _SignupState extends State<Signup> {
           ],
         ),
       ),
+      bottomNavigationBar: BottomNavyBarMeth(-1),
     ));
   }
 }

@@ -22,9 +22,9 @@ class _BoutiqueState extends State<Boutique> {
             appBar: appBarMeth(height, width, 'Boutique'),
 
             body: new ListView.builder(
-              itemCount: listProduitsC.length,
+              itemCount: listProduitsClass.length,
               itemBuilder: (BuildContext ctxt, int index) {
-                return Padding(padding: EdgeInsets.only(bottom: 15), child : ProduitCard(listProduitsC[index]));
+                return Padding(padding: EdgeInsets.only(bottom: 15), child : ProduitCard(listProduitsClass[index]));
               }
             ),
             bottomNavigationBar: BottomNavyBarMeth(1),

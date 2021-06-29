@@ -20,39 +20,38 @@ class _LoginState extends State<Login> {
         child: Scaffold(
       drawer: NavDrawer(),
       appBar: appBarMeth(height, width, "Log in"),
-      bottomNavigationBar: BottomNavyBarMeth(3),
+      bottomNavigationBar: BottomNavyBarMeth(-1),
       body: Center(
         child: Container(
           height: height,
           width: width * 0.83,
           color: kBackground,
           child: Center(
-            child: Column(
+            child: ListView(
               children: <Widget>[
                 Container(
                   height: 100,
                   margin: EdgeInsets.all(15),
                   child: Image.asset("assets/images/arijePhyto-c.jpg"),
                 ),
-                Text(
-                  "S'identifier",
-                  style: TextStyle(fontSize: 40, color: Colors.black),
+                Center(
+                  child: Text(
+                    "S'identifier",
+                    style: TextStyle(fontSize: 40, color: Colors.black),
+                  ),
                 ),
+                SizedBox(height: 20,),
                 BlocForum("Email", false),
                 SizedBox(
                   height: 20,
                 ),
                 BlocForum('Mot de passe', true),
-                SizedBox(
-                  height: 10,
-                ),
-                Text("vous oubliez votre mot de passe ?"),
                 Padding(
                   padding: const EdgeInsets.only(
                       left: 20, top: 15, right: 20, bottom: 0),
                   child: Material(
                     elevation: 5.0,
-                    borderRadius: BorderRadius.circular(30.0),
+                    borderRadius: BorderRadius.circular(10.0),
                     color: kPrimaryColor,
                     child: MaterialButton(
                       minWidth: MediaQuery.of(context).size.width,
@@ -66,12 +65,16 @@ class _LoginState extends State<Login> {
                     ),
                   ),
                 ),
+                SizedBox(
+                  height: 20,
+                ),
+                Center(child: Text("Mot de passe oublié ?")),
                 Padding(
                   padding: const EdgeInsets.only(
                       left: 25, top: 20, right: 25, bottom: 20),
                   child: Material(
                     elevation: 5.0,
-                    borderRadius: BorderRadius.circular(30.0),
+                    borderRadius: BorderRadius.circular(10.0),
                     color: kTextColorTitle,
                     child: MaterialButton(
                       minWidth: MediaQuery.of(context).size.width,

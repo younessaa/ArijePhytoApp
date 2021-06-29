@@ -1,3 +1,4 @@
+import 'package:arijephyto/screens/signup/compteInfo.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -22,13 +23,13 @@ class NavDrawer extends StatelessWidget {
                   
                 ),
             ),
-            listTileItem(context, 'Mon compte', width, height, null),
+            listTileItem(context, 'Mon compte', width, height, MonCompte.person.getEmail == null ? '/signup' : '/moncompte'),
             listTileItem(context, 'Portfolio', width, height, '/portfolio'),
             listTileItem(context, 'PROMO', width, height, '/promo'),
             listTileItem(context, 'Catégories', width, height, '/categories'),
             listTileItem(context, 'Contact', width, height, '/contact'),
             listTileItem(context, 'À Propos De', width, height, '/aproposde'),
-            listTileItem(context, 'Déconnexion', width, height, null),
+            listTileItem(context, 'Déconnexion', width, height, '/login'),
           ],
         ),
       ),

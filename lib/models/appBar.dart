@@ -1,3 +1,4 @@
+import 'package:arijephyto/screens/signup/compteInfo.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -49,12 +50,15 @@ AppBar appBar(double height, double width) {
                     
                     Padding(
                       padding: EdgeInsets.only(right: height * 0.02),
-                      child: GestureDetector(
-                        onTap: () {},
+                      child: Builder(builder : (context) => GestureDetector(
+                        onTap: () {
+                          Navigator.pushNamed(context, MonCompte.person.getEmail == null ? '/signup' : '/moncompte');
+                        },
                         child: Icon(
                           Icons.person,
                           size: kIconSize,
                         ),
+                      )
                       )
                     ),
                   ],

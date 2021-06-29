@@ -12,6 +12,7 @@ import 'package:arijephyto/screens/portfolio/espritCooperative.dart';
 import 'package:arijephyto/screens/portfolio/madeInMorocco.dart';
 import 'package:arijephyto/screens/portfolio/portfolio.dart';
 import 'package:arijephyto/screens/portfolio/proc%C3%A9d%C3%A9sArtisanaux.dart';
+import 'package:arijephyto/screens/signup/compteInfo.dart';
 import 'package:arijephyto/screens/signup/signup.dart';
 import 'package:arijephyto/screens/welcome/welcome_screen.dart';
 import 'package:flutter/material.dart';
@@ -57,6 +58,7 @@ class MyApp extends StatelessWidget {
         '/Made in Morocco' : (context) => MadeInMorocco(),
         '/Esprit Coopérative' : (context) => EspritCooperative(),
         '/categorieScreen' : (context) => CategorieScreen(),
+        '/moncompte' : (context) => MonCompte(),
       },
     );
   }
