@@ -18,7 +18,7 @@ class PortfolioCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Stack(
       children : [
-        Center(child: Image.asset(imgPath, width: width * 0.7,)),
+        Center(child: Image.asset(imgPath, width: width * 0.6,)),
         Positioned(
           bottom: 0.0,
           left: 0.0,

@@ -1,3 +1,4 @@
+import 'package:arijephyto/components/classElement.dart';
 
 List<String> imgListOffres = [
   "assets/images/offre1.png",
@@ -28,7 +29,7 @@ List<String> listPortName = [
   "Autorisé ONSSA",
   "100% Naturel",
   "Esprit Coopérative",
-  "Made in Moroccoo",
+  "Made in Morocco",
 ];
 
 List<String> imgListProduits = [
@@ -90,3 +91,172 @@ List<double> listProduitsPrix = [
   35.00,
 ];
 
+bool isTheFisttime = true;
+
+List<String> categoriesName = [
+  'Accessoires',
+  'Aromathérapie',
+  'Corps',
+  'Enfants',
+  'Cheveux',
+  'Visage',
+  'Paniers Cadeaux',
+  'Huiles nourissantes'
+];
+
+List<Produit> listProduitsAccessoires = [
+  Produit(
+    prodTitle: 'Pierre poncé',
+    prodImage: 'assets/images/access1.jpg',
+    images: ['assets/images/access11.jpg',],
+    prodDescription: ' ',
+    prodQntStock: 0,
+    prodNombre: 1,
+    prodText: '',
+    categorie : 'Accessoires',
+    prodPrix: 15,
+  ),
+  Produit(
+    prodTitle: 'Diffuseur d’huiles essentielles en argile',
+    prodImage: 'assets/images/access1.jpg',
+    images: ['assets/images/access11.jpg',],
+    prodDescription: ' ',
+    prodQntStock: 10,
+    prodNombre: 1,
+    prodText: '',
+    categorie : 'Accessoires',
+    prodPrix: 35,
+  ),
+];
+
+List<Produit> listProduitsAroma = [
+  Produit(
+    prodTitle: 'Camomille',
+    prodImage: 'assets/images/aroma1.jpg',
+    images: ['assets/images/aroma11.jpg',],
+    prodDescription: ' ',
+    prodQntStock: 10,
+    prodNombre: 1,
+    prodText: '',
+    categorie : 'Alimentation saine, Aromathérapie',
+    prodPrix: 25,
+  ),
+  Produit(
+    prodTitle: 'Huile Essentielle Bois de Santal',
+    prodImage: 'assets/images/aroma2.jpg',
+    images: ['assets/images/aroma21.jpg',],
+    prodDescription: ' ',
+    prodQntStock: 10,
+    prodNombre: 1,
+    prodText: '',
+    categorie : 'Aromathérapie',
+    prodPrix: 239,
+  ),
+];
+
+List<Produit> listProduitsCorps = [
+  Produit(
+    prodTitle: 'Baume à Lèvres Rose',
+    prodImage: 'assets/images/corp1.jpg',
+    images: ['assets/images/corp11.jpg', 'assets/images/corp12.jpg',],
+    prodDescription: ' Visage : Il hydrate les lèvres , en laissant une bonne odeur ,  Précieux et raffiné, ce baume enveloppe les lèvres d’un parfum de roses tout juste écloses. Propriété : 100% naturelle et pure',
+    prodQntStock: 10,
+    prodNombre: 1,
+    prodText: 'Un must ! Formulé à partir de beurre de Karité, de cire d’abeille, et d’huile végétales, ce baume est idéal pour la nutrition et le soin des lèvres. Un rendu légèrement brillant et rose pour mettre en valeur vos lèvres.',
+    categorie : 'Corps, Soins hydratants',
+    prodPrix: 30,
+  ),
+  Produit(
+    prodTitle: 'Crème Bébé',
+    prodImage: 'assets/images/corp2.jpg',
+    images: ['assets/images/corp21.jpg', 'assets/images/corp22.jpg',],
+    prodDescription: ' Emballage	Pot en plastique avec couvercle sécurité Volume	 200g',
+    prodQntStock: 10,
+    prodNombre: 1,
+    prodText: 'Un must ! Formulé à partir de beurre de Karité, de cire d’abeille, et d’huile végétales, ce baume est idéal pour la nutrition et le soin des lèvres. Un rendu légèrement brillant et rose pour mettre en valeur vos lèvres.',
+    categorie : 'Corps, Enfants',
+    prodPrix: 165,
+  ),
+  
+];
+
+List<Produit> listProduitsEnfants = [
+  Produit(
+    prodTitle: 'Ghassoul Bébé',
+    prodImage: 'assets/images/enfant1.jpg',
+    images: ['assets/images/enfant11.jpg', 'assets/images/enfant12.jpg',],
+    prodDescription: ' ',
+    prodQntStock: 10,
+    prodNombre: 1,
+    prodText: 'Emballage	Pot en plastique avec couvercle sécurité Volume	 50g',
+    categorie : 'Enfants',
+    prodPrix: 30,
+  ),
+];
+
+List<Produit> listProduitsCheveux = [
+  Produit(
+    prodTitle: 'Ghassoul',
+    prodImage: 'assets/images/cheveux1.jpg',
+    images: ['assets/images/cheveux1.jpg',],
+    prodDescription: 'Volume	200g\n Emballage	 sachet en carton',
+    prodQntStock: 10,
+    prodNombre: 1,
+    prodText: ' ',
+    categorie : 'Cheveux, Cheveux abimés, Corps, Masques Visage, Problemes de la peau, visage',
+    prodPrix: 49,
+  ),
+];
+
+List<Produit> listProduitsVisage = [
+  Produit(
+    prodTitle: 'Argile à L’Oranger',
+    prodImage: 'assets/images/visage1.jpg',
+    images: ['assets/images/visage11.jpg', 'assets/images/visage12.jpg',],
+    prodDescription: 'Volume	200g\n Emballage	 sachet en carton',
+    prodQntStock: 10,
+    prodNombre: 1,
+    prodText: ' ',
+    categorie : 'Masques Visage, visage',
+    prodPrix: 38,
+  ),
+  Produit(
+    prodTitle: 'Argile à Lavande',
+    prodImage: 'assets/images/visage2.jpg',
+    images: ['assets/images/visage21.jpg', 'assets/images/visage22.jpg',],
+    prodDescription: 'Emballage	 Pot en plastique avec couvercle sécurité \nVolume 50g',
+    prodQntStock: 10,
+    prodNombre: 1,
+    prodText: ' ',
+    categorie : 'Masques Visage, visage',
+    prodPrix: 38,
+  ),
+];
+
+List<Produit> listProduitsPaniersCad = [
+  Produit(
+    prodTitle: 'Panier cadeau 1',
+    prodImage: 'assets/images/paniarcad1.jpg',
+    images: ['assets/images/paniarcad11.jpg', 'assets/images/paniarcad12.jpg',],
+    prodDescription: '1 Huile nourissantes \n1 Argile \n1 Gommage Royal pour le corps \n1 Panier traditionnel',
+    prodQntStock: 10,
+    prodNombre: 1,
+    prodText: ' ',
+    categorie : 'Paniers Cadeaux',
+    prodPrix: 160,
+  ),
+];
+
+List<Produit> listProduitsHuilesNour = [
+  Produit(
+    prodTitle: 'Huile d’Ail',
+    prodImage: 'assets/images/huile1.jpg',
+    images: ['assets/images/huile11.jpg', 'assets/images/huile12.jpg',],
+    prodDescription: 'Ingrédient : Macérât huileux d’Ail \nPropriétés pour les cheveux : Redonne de la brillance; Favorise la repousse; Anti-Chut; Nourrissant; Fortifiant \nFortement conseillée pour les cheveux fragiles, rêches, cassants et secs. \nFortement conseillée pour les cheveux crépus afro ou métissés. \nPropriétés visage et corps: Hydratant; Nourrissant; Revitalisant; Assainissant; Réparateu \nFortement conseillée pour les peaux fragiles, sensibles, flasques, flétries.',
+    prodQntStock: 10,
+    prodNombre: 1,
+    prodText: 'L’huile d’Ail est fabuleusement riche en vitamines A, C, E B1, B2, B3, B5, B6 et contient également des antioxydants comme des flavonoïdes et des tocophérols. \nIl stimule la repousse des cheveux et est certainement un des huiles qui agit le plus efficacement contre la chute des cheveux.',
+    categorie : 'Cheveux, Huiles nourissantes, Soin antichute',
+    prodPrix: 160,
+  ),
+];

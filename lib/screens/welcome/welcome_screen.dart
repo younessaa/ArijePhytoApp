@@ -1,3 +1,4 @@
+import 'package:arijephyto/components/dataLists.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../../constants.dart';
@@ -67,7 +68,9 @@ class _WelcomeState extends State<Welcome> {
                                   style: GoogleFonts.ruda(textStyle: TextStyle(fontWeight: FontWeight.normal, color: kTextColorB, fontSize: kTextSize)),
                                 ),
                           onPressed: () {
-                            //Navigator.pushNamed(context, '/home');
+                            setState(() {
+                              isTheFisttime = false;
+                            });
                             Navigator.popAndPushNamed(context, '/home');
                           },
                           style: TextButton.styleFrom(backgroundColor: kPrimaryColor, enableFeedback: true,),

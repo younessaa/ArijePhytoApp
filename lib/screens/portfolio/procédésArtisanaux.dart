@@ -69,14 +69,52 @@ class ProcedesArtisanaux extends StatelessWidget {
                     ),
                   ),
                 ),
-                SizedBox(height: 20,),
-                Center(
-                  child: Text(
-                    'Projets récents',
-                    style: GoogleFonts.ruda(textStyle: TextStyle(fontWeight: FontWeight.normal, color: Colors.black, fontSize: kTextSizeTitle)),
+                SizedBox(height: 20),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Text(
+                              'Laissez un commentaire',
+                              style: GoogleFonts.roboto(textStyle: TextStyle(fontWeight: FontWeight.bold, color: Colors.black, fontSize: kTextSize)),     
+                      ),
                     ),
-                ),
-                SizedBox(height : 10),
+
+                    Padding(
+                      padding: const EdgeInsets.all(8),
+                      child: Container(
+                        decoration : BoxDecoration(
+                          color: Colors.grey[250],
+                          border: Border.all(color: Colors.grey)
+                        ),
+                        child: TextFormField(
+                        maxLines: 5,
+                        decoration : const InputDecoration(
+                          border: InputBorder.none,
+                          ),
+                        ),
+                      ),
+                    ),
+
+                SizedBox(height: 10.0),
+
+                Padding(
+                  padding: EdgeInsets.only(left: width * 0.5, right: 4),
+                  child: TextButton(
+                    style: TextButton.styleFrom(
+                      backgroundColor : Color(0xFF6C8DAB),
+                      enableFeedback: false,
+                    ),
+                    onPressed: (){
+                    },
+                    child: Text(
+                      'Soumettre',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: kTextSize,
+                        fontWeight: FontWeight.bold
+                      ),
+                    ) 
+                  ),
+                )
               ]
             )
     )

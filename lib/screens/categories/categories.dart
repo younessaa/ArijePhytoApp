@@ -31,14 +31,14 @@ class _CategoriesState extends State<Categories> {
                 style: GoogleFonts.poppins(textStyle: TextStyle(fontWeight: FontWeight.bold, color: Color(0xFF8F8C8C), fontSize: kTextSize)),
               ),
             ),
-            listTileItem(context, 'Accessoires', width, height, null),
-            listTileItem(context, 'Aromathérapie', width, height, null),
-            listTileItem(context, 'Corps', width, height, null),
-            listTileItem(context, 'Enfants', width, height, null),
-            listTileItem(context, 'Cheveux', width, height, null),
-            listTileItem(context, 'Visage', width, height, null),
-            listTileItem(context, 'Paniers Cadeaux', width, height, null),
-            listTileItem(context, 'Huiles nourissantes', width, height, null),
+            listTileItem(context, 'Accessoires', width, height, 0),
+            listTileItem(context, 'Aromathérapie', width, height, 1),
+            listTileItem(context, 'Corps', width, height, 2),
+            listTileItem(context, 'Enfants', width, height, 3),
+            listTileItem(context, 'Cheveux', width, height, 4),
+            listTileItem(context, 'Visage', width, height, 5),
+            listTileItem(context, 'Paniers Cadeaux', width, height, 6),
+            listTileItem(context, 'Huiles nourissantes', width, height, 7),
           ],
         ),
 
@@ -48,10 +48,10 @@ class _CategoriesState extends State<Categories> {
   );
   }
 
-  GestureDetector listTileItem(BuildContext context, String string,double width, double height, String path) {
+  GestureDetector listTileItem(BuildContext context, String string,double width, double height, int i) {
     return GestureDetector(
       onTap: () {
-        Navigator.popAndPushNamed(context, path);
+        Navigator.popAndPushNamed(context, '/categorieScreen', arguments: i);
       },
       child: Container(
         decoration: BoxDecoration(
