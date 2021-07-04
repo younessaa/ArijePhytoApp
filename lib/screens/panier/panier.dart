@@ -91,17 +91,17 @@ class _PanierState extends State<Panier> {
                         ],
                       ),
                       Padding(
-                        padding: const EdgeInsets.only(bottom : 14.0),
+                        padding: const EdgeInsets.only(bottom : 4.0),
                         child: ClipRRect(
-                        borderRadius: BorderRadius.circular(kDefaultRadius),
+                        borderRadius: BorderRadius.circular(10),
                         child: TextButton(
                                 child: Text(' Passer commande ',
                                         style: GoogleFonts.roboto(textStyle: TextStyle(fontWeight: FontWeight.bold, color: Colors.white, fontSize: 25)),
                                       ),
                                 onPressed: () {
-                                  //Navigator.popAndPushNamed(context, '/home');
+                                  Navigator.pushNamed(context, '/passercommande'); //passercommande
                                 },
-                                style: TextButton.styleFrom(backgroundColor: Color(0xFF67C37B), enableFeedback: false,),
+                                style: TextButton.styleFrom(backgroundColor: Color(0xFFEA5252), enableFeedback: false,),
                               ),    
                         ),
                       ),

@@ -7,6 +7,7 @@ import '../../constants.dart';
 
 class MonCompte extends StatefulWidget {
   static Person person = new Person();
+  static bool isConnected = false;
   @override
   _MonCompteState createState() => _MonCompteState();
 }
@@ -52,6 +53,7 @@ class _MonCompteState extends State<MonCompte> {
                   ),
                   textRow('Prénom :', MonCompte.person.getPrenom),
                   textRow('Nom :', MonCompte.person.getNom),
+                  textRow('Adresse :', MonCompte.person.getAdresse),
                   textRow('Email :', MonCompte.person.getEmail),
                   textRow('Telephone :', MonCompte.person.getTele),
 

@@ -19,6 +19,8 @@ import 'package:flutter/material.dart';
 import 'components/dataLists.dart';
 import 'screens/blogs/blogs.dart';
 import 'screens/home/homeScreen.dart';
+import 'screens/passerCommande/cmiMethode.dart';
+import 'screens/passerCommande/passerParCMI.dart';
 import 'screens/portfolio/100Naturel.dart';
 import 'screens/promo/promo.dart';
 import 'theme.dart';
@@ -59,6 +61,8 @@ class MyApp extends StatelessWidget {
         '/Esprit Coopérative' : (context) => EspritCooperative(),
         '/categorieScreen' : (context) => CategorieScreen(),
         '/moncompte' : (context) => MonCompte(),
+        '/passercommande' : (context) => PasserCommande(),
+        '/cmiMethode' : (context) => CmiMethode()
       },
     );
   }

@@ -7,7 +7,7 @@ List<Produit> listProduitsC = imgListProduits.map((item) => Produit(
     prodNombre: 1, 
     prodPrix: listProduitsPrix[imgListProduits.indexOf(item)], 
     prodTitle: listPorduitsName[imgListProduits.indexOf(item)],
-    idProduit: Produit.idClasse++,
+    
     images : ['assets/images/produit'+'${imgListProduits.indexOf(item)}.jpg', 'assets/images/produit'+'${imgListProduits.indexOf(item)}.jpg',]
     )
   ).toList();
@@ -40,7 +40,6 @@ List<Produit> listProduitsPromo = imgListPromos.map((item) =>  Produit(
     prodNombre: 1, 
     prodPrix: listPromoPrix[imgListPromos.indexOf(item)], 
     prodTitle: listPromosName[imgListPromos.indexOf(item)],
-    idProduit: Produit.idClasse++,
     lastPrix: listPromolastPrix[imgListPromos.indexOf(item)],
     prodDescription: listPromosDesc[imgListPromos.indexOf(item)],
     prodText: listPromosText[imgListPromos.indexOf(item)],

@@ -196,7 +196,7 @@ class _ProduitItemState extends State<ProduitItem> {
                                   Panier.listProduitsPanier.elementAt(Panier.listProduitsPanier.indexOf(getProduit(Panier.listProduitsPanier, prod.idProduit))).prodNombre = prod.prodNombre;
                                 Panier.somme = calculeSommePanier(Panier.listProduitsPanier);
                               });
-                              Navigator.popAndPushNamed(context, '/panier');
+                              Navigator.pushNamed(context, '/panier');
                             },
                             color: Color(0xFF6C8DAB),
                             ),

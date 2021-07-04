@@ -8,11 +8,11 @@ class Produit {
   double lastPrix;
   String prodImage;
   String categorie;
-  int idProduit;
+  final int idProduit = idClasse++;
   String prodDescription;
   String prodText;
   List<String> images = [];
-  Produit({this.categorie, this.prodQntStock, this.prodImage, this.prodTitle, this.prodNombre, this.prodPrix, this.idProduit, this.lastPrix, this.prodDescription, this.prodText, this.images});
+  Produit({this.categorie, this.prodQntStock, this.prodImage, this.prodTitle, this.prodNombre, this.prodPrix, this.lastPrix, this.prodDescription, this.prodText, this.images});
 }
 
 class Blog {
@@ -39,68 +39,68 @@ class Person {
   String _email;
   String _motDePasse;
 
-  get getPrenom {
+  String get getPrenom {
     return _prenom;
   }
   set setPrenom (String string) {
     _prenom = string;
   }
-  get getNom {
+  String get getNom {
     return _nom;
   }
   set setNom (String string) {
     _nom = string;
   }
 
-  get getAdresse {
+  String get getAdresse {
     return _adresse;
   }
   set setAdresse (String string) {
     _adresse = string;
   }
 
-  get getVille {
+  String get getVille {
     return _ville;
   }
   set setVille(String string) {
     _ville = string;
   }
-  get getRegion {
+  String get getRegion {
     return _region;
   }
   set setRegion(String string) {
     _region = string;
   }
 
-  get getCodePos {
+  String get getCodePos {
     return _codePostale;
   }
   set setCodePos(String string) {
     _codePostale = string;
   }
 
-  get getPays {
+  String get getPays {
     return _pays;
   }
   set setPays(String string) {
     _pays = string;
   }
 
-  get getTele {
+  String get getTele {
     return _telephone;
   }
   set setTele(String string) {
     _telephone = string;
   }
 
-  get getEmail {
+  String get getEmail {
     return _email;
   }
   set setEmail(String string) {
     _email = string;
   }
 
-  get getMotPass {
+  String get getMotPass {
     return _motDePasse;
   }
   set setMotPass(String string) {

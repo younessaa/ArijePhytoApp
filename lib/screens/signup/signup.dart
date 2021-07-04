@@ -92,15 +92,15 @@ class _SignupState extends State<Signup> {
               child: Material(
                 elevation: 5.0,
                 borderRadius: BorderRadius.circular(10.0),
-                color: kPrimaryColor,
+                color: Color(0xFF6C8DAB),
                 child: MaterialButton(
                   minWidth: MediaQuery.of(context).size.width,
                   padding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
                   onPressed: () {
                     setState(() {
+                      MonCompte.isConnected = true;
                     });
-                    print(MonCompte.person.getEmail.toString());
-                    if(MonCompte.person.getEmail.toString() != null)
+                    if(MonCompte.person.getEmail != null)
                       Navigator.popAndPushNamed(context, '/moncompte');
                   },
                   child: Text("Créer un compte",
